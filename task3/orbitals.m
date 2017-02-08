@@ -12,19 +12,31 @@ DV = D(X, Y, Z);
 
 figure;
 mesh(X, Y, PV);
-saveas(gcf, 'fig1.1.eps', 'epsc');
+xlabel("x");
+ylabel("y");
+zlabel("p_x");
+saveas(gcf, "fig1.1.eps", "epsc");
 
 figure;
 mesh(X, Y, DV);
-saveas(gcf, 'fig1.2.eps', 'epsc');
+xlabel("x");
+ylabel("y");
+zlabel("d_{xy}");
+saveas(gcf, "fig1.2.eps", "epsc");
 
 figure;
 contour(X, Y, PV);
-saveas(gcf, 'fig1.3.eps', 'epsc');
+xlabel("x");
+ylabel("y");
+zlabel("p_x");
+saveas(gcf, "fig1.3.eps", "epsc");
 
 figure;
 contour(X, Y, DV);
-saveas(gcf, 'fig1.4.eps', 'epsc');
+xlabel("x");
+ylabel("y");
+zlabel("d_{xy}");
+saveas(gcf, "fig1.4.eps", "epsc");
 
 X2 = [-10 : 0.1 : 10];
 Z2 = zeros(size(X2));
@@ -32,8 +44,12 @@ DV2 = D(X2, X2, Z2);
 
 figure;
 plot(X2, DV2);
-saveas(gcf, 'fig2.1.eps', 'epsc');
+xlabel("x");
+ylabel("v");
+saveas(gcf, "fig2.1.eps", "epsc");
 
 figure;
 plot(X2(1:(size(X2)(2) - 1)), diff(DV2) / 0.5);
-saveas(gcf, 'fi2.2.eps', 'epsc');
+xlabel("x");
+ylabel("dv/dx");
+saveas(gcf, "fig2.2.eps", "epsc");
